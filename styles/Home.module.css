@@ -1,0 +1,68 @@
+.title {
+  font-weight: 500;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+.addBtn {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.addBtn > svg {
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+.addBtn > span {
+  flex-shrink: 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  table-layout: fixed;
+}
+
+.thead th {
+  text-align: left;
+  font-weight: 400;
+}
+.thead th:first-child {
+  padding-left: 1.625rem;
+}
+.tbody > tr {
+  height: 7rem;
+  box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+}
+.tbody td {
+  background-color: #fff;
+  color: #525f7f;
+  margin-bottom: 0.625rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tbody td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 1.625rem;
+}
+.tbody td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  padding-right: 1.625rem;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #00234b;
+}
+
+.name div {
+  margin-top: 4px;
+}
+
+.sal {
+  font-weight: 500;
+}
