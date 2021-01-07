@@ -1,0 +1,43 @@
+.container {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  border-bottom: 1px solid #eaedf3;
+  padding: 1.875rem;
+}
+.title {
+  font-weight: 500;
+  margin: 0;
+}
+
+.form > div:first-child {
+  padding: 2.5rem 2.5rem 5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.form > div > div:not(:first-child) {
+  margin-top: 1.875rem;
+}
+
+.form label {
+  color: #778ca3;
+  font-size: 0.7125rem;
+  margin-bottom: 4px;
+}
+
+.form label ~ div:last-child {
+  margin-top: 8px;
+  color: rgba(0, 35, 75, 0.5);
+}
+
+.ctrls {
+  background: #f9faff;
+  padding: 1.875rem 0;
+  border-radius: 0px 0px 10px 10px;
+}
+.ctrls button:last-child {
+  margin-left: 1rem;
+}
