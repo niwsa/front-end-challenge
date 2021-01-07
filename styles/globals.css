@@ -16,11 +16,73 @@ body {
   box-sizing: border-box;
 }
 
-.h100 {
-  height: 100%;
+/* BEGIN:: input,select,button global styles */
+
+a {
+  text-decoration: none;
 }
 
-button {
+input[type="text"],
+input[type="number"],
+select {
+  font: 400 1.25rem "Inter", sans-serif;
+  border: none;
+  border-bottom: 1.5px solid #ced5db;
+  padding: 0 0 8px 0;
+  color: #00234b;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: 0;
+  border-bottom: 1.5px solid #624de3;
+}
+
+input[type="text"]:focus ~ label {
+  color: #624de3;
+}
+
+::placeholder {
+  font: 400 1.25rem "Inter", sans-serif;
+  color: #525f7f;
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+  color: #525f7f;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+  line-height: inherit;
+  outline: none;
+}
+
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+}
+
+.select::after {
+  content: "";
+  justify-self: end;
+  width: 0.8em;
+  height: 0.5em;
+  background-color: #778ca3;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+select,
+.select::after {
+  grid-area: select;
+}
+
+option:checked {
+  color: #00234b;
+}
+button,
+.linkBtn {
   border: 2px solid transparent;
   padding: 0.8rem 2rem;
   border-radius: 50px;
@@ -31,11 +93,16 @@ button {
   font: 400 1rem "Inter", sans-serif;
   cursor: pointer;
 }
+
 button:focus,
-button:hover {
+button:hover,
+.linkBtn:focus,
+.linkBtn:hover {
   background-color: #503cc9;
 }
-button:focus {
+
+button:focus,
+.linkBtn:focus {
   outline: 0;
   border-color: rgba(176, 166, 241, 0.4);
   box-shadow: 0 6px 12px rgba(21, 19, 81, 0.1);
@@ -48,34 +115,54 @@ button:focus {
   box-shadow: none;
   min-width: 150px;
 }
+
 .btnSec:focus,
 .btnSec:hover {
   color: #fff;
 }
+/* END:: input,select,button global styles */
+
+/* BEGIN:: common classes for global use */
+.h100 {
+  height: 100%;
+}
+
 .flex {
   display: flex;
 }
+
 .inl-flex {
   display: inline-flex;
 }
+
+.just-ctr {
+  justify-content: center;
+}
+
 .al-ctr {
   align-items: center;
 }
+
 .al-base {
   align-items: baseline;
 }
+
 .col {
   flex-direction: column;
 }
+
 .no-shrink {
   flex-shrink: 0;
 }
+
 .ml-auto {
   margin-left: auto;
 }
+
 .scroll {
   overflow: auto;
 }
+
 .meta {
   color: #778ca3;
   font-size: 0.8125rem;

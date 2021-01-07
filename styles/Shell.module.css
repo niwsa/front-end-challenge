@@ -15,5 +15,11 @@
 }
 .main {
   background-color: #f4f7fc;
-  padding: 2.875rem 6.3125rem;
+  padding: 2.875rem 3.1562rem;
+}
+
+@media (min-width: 600px) {
+  .main {
+    padding: 2.875rem 6.3125rem;
+  }
 }
