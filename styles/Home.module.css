@@ -78,3 +78,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.emptyState {
+  opacity: 0.5;
+}

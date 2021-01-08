@@ -3,6 +3,7 @@ import UserIcon from "components/svg/UserIcon";
 import { retrieveEmplRecords } from "lib/api";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "styles/Home.module.css";
 
@@ -37,36 +38,46 @@ export default function Home() {
         </Link>
       </header>
       <div className={styles.tableOvflw}>
-        <table className={styles.table}>
-          <thead className={`meta ${styles.thead}`}>
-            <tr>
-              <th>EMPLOYEE</th>
-              <th>JOB TITLE</th>
-              <th>COUNTRY</th>
-              <th>SALARY</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody className={styles.tbody}>
-            {empls.map(({ id, name, dob, jobTitle, country, salary }) => (
-              <tr key={id}>
-                <td className={styles.name}>
-                  {name} <div className="meta">{dob}</div>
-                </td>
-                <td>{jobTitle}</td>
-                <td>{country}</td>
-                <td className={styles.sal}>
-                  {salary} USD <span className="meta">per year</span>
-                </td>
-                <td>
-                  <Link href={`/employee/${id}`}>
-                    <a className={`linkBtn btnSec`}>Edit</a>
-                  </Link>
-                </td>
+        {empls.length ? (
+          <table className={styles.table}>
+            <thead className={`meta ${styles.thead}`}>
+              <tr>
+                <th>EMPLOYEE</th>
+                <th>JOB TITLE</th>
+                <th>COUNTRY</th>
+                <th>SALARY</th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className={styles.tbody}>
+              {empls.map(({ id, name, dob, jobTitle, country, salary }) => (
+                <tr key={id}>
+                  <td className={styles.name}>
+                    {name} <div className="meta">{dob}</div>
+                  </td>
+                  <td>{jobTitle}</td>
+                  <td>{country}</td>
+                  <td className={styles.sal}>
+                    {salary} USD <span className="meta">per year</span>
+                  </td>
+                  <td>
+                    <Link href={`/employee/${id}`}>
+                      <a className={`linkBtn btnSec`}>Edit</a>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <Image
+            src="/people.svg"
+            width={898.098}
+            height={398.742}
+            layout="responsive"
+            className={styles.emptyState}
+          />
+        )}
       </div>
     </Shell>
   );
