@@ -27,7 +27,9 @@ export default function Home() {
       </Head>
       <header className="flex al-base">
         <h2 className={styles.title}>People</h2>
-        <span className="meta no-shrink">3 employees</span>
+        {empls.length ? (
+          <span className="meta">{empls.length} employees</span>
+        ) : null}
         <Link href="/employee">
           <a className={`inl-flex al-ctr no-shrink linkBtn ${styles.addBtn}`}>
             <UserIcon aria-hidden="true" width="1rem" height="1rem" />
@@ -35,7 +37,7 @@ export default function Home() {
           </a>
         </Link>
       </header>
-      <div style={{ overflowX: "auto" }}>
+      <div className={styles.tableOvflw}>
         <table className={styles.table}>
           <thead className={`meta ${styles.thead}`}>
             <tr>
@@ -58,58 +60,12 @@ export default function Home() {
                   {salary} USD <span className="meta">per year</span>
                 </td>
                 <td>
-                  <button type="button" className="btnSec">
-                    Edit
-                  </button>
+                  <Link href={`/employee/${id}`}>
+                    <a className={`linkBtn btnSec`}>Edit</a>
+                  </Link>
                 </td>
               </tr>
             ))}
-            {/* <tr>
-              <td className={styles.name}>
-                Ann Henry <div className="meta">04/12/1990</div>
-              </td>
-              <td>Product Manager</td>
-              <td>United States</td>
-              <td className={styles.sal}>
-                60,000 USD <span className="meta">per year</span>
-              </td>
-              <td>
-                <button type="button" className="btnSec">
-                  Edit
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td className={styles.name}>
-                Annette Williamson <div className="meta">20/04/1985</div>
-              </td>
-              <td>CEO</td>
-              <td>United States</td>
-              <td className={styles.sal}>
-                60,000 USD <span className="meta">per year</span>
-              </td>
-              <td>
-                <button type="button" className="btnSec">
-                  Edit
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td className={styles.name}>
-                Philip Alexander <div className="meta">25/07/1989</div>
-              </td>
-              <td>Software engineer</td>
-              <td>United States</td>
-              <td className={styles.sal}>
-                60,000 USD <span className="meta">per year</span>
-              </td>
-              <td>
-                <button type="button" className="btnSec">
-                  Edit
-                </button>
-              </td>
-            </tr>
-         */}
           </tbody>
         </table>
       </div>
