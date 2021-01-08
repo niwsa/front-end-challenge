@@ -3,8 +3,10 @@
   height: 5rem;
   font-weight: 500;
 }
-.userCard {
-  padding-right: 4rem;
+@media (min-width: 600px) {
+  .userCard {
+    padding-right: 4rem;
+  }
 }
 .avatar {
   border-radius: 50%;
@@ -15,11 +17,19 @@
 }
 .main {
   background-color: #f4f7fc;
-  padding: 2.875rem 3.1562rem;
+  padding: 2rem;
+  overflow: hidden;
+  height: calc(100% - 5rem);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .main {
     padding: 2.875rem 6.3125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main {
+    padding: 2.875rem calc(15vw);
   }
 }

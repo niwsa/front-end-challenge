@@ -2,7 +2,7 @@ import styles from "styles/Shell.module.css";
 
 export default function Shell({ children }) {
   return (
-    <div className="flex col h100">
+    <div className="h100">
       <header className={`flex ${styles.header}`}>
         <div className={`inl-flex al-ctr ml-auto ${styles.userCard}`}>
           <div className={styles.avatar}></div>
@@ -12,7 +12,7 @@ export default function Shell({ children }) {
           </div>
         </div>
       </header>
-      <main className={`h100 scroll ${styles.main}`}>{children}</main>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 }

@@ -7,19 +7,30 @@
 .header {
   border-bottom: 1px solid #eaedf3;
   padding: 1.875rem;
+  height: 6.875rem;
 }
 .title {
   font-weight: 500;
   margin: 0;
 }
 
+.form {
+  height: calc(100% - 6.875rem);
+}
+
 .form > div:first-child {
   padding: 2.5rem 2.5rem 5rem;
   max-width: 600px;
   margin: 0 auto;
+  /*assuming 6.875rem height for both header and ctrls*/
+  height: calc(100% - 6.875rem);
+  overflow: auto;
 }
-.form > div > div:not(:first-child) {
+.form > div:first-child > div:not(:first-child) {
   margin-top: 1.875rem;
+}
+.form > div:first-child > div:last-child {
+  margin-bottom: 5rem;
 }
 
 .form label {
@@ -37,7 +48,10 @@
   background: #f9faff;
   padding: 1.875rem 0;
   border-radius: 0px 0px 10px 10px;
+  height: 6.875rem;
 }
 .ctrls button:last-child {
   margin-left: 1rem;
+  /* 12ch for add employee, 2 rem to account for padding*/
+  min-width: calc(12ch + 2rem);
 }

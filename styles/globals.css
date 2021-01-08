@@ -5,9 +5,15 @@ body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   height: 100%;
-  font-size: 16px;
+  font-size: 14px;
+  overflow: hidden;
 }
-
+@media (min-width: 600px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
 #__next {
   height: 100%;
 }
@@ -33,7 +39,8 @@ select {
 }
 
 input[type="text"]:focus,
-input[type="number"]:focus {
+input[type="number"]:focus,
+select:focus {
   outline: 0;
   border-bottom: 1.5px solid #624de3;
 }
@@ -83,8 +90,9 @@ option:checked {
 }
 button,
 .linkBtn {
+  display: inline-block;
   border: 2px solid transparent;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem;
   border-radius: 50px;
   line-height: 1rem;
   background-color: #624de3;
@@ -92,8 +100,14 @@ button,
   box-shadow: 0px 6px 12px rgba(98, 77, 227, 0.3);
   font: 400 1rem "Inter", sans-serif;
   cursor: pointer;
+  min-width: calc(12ch + 2rem);
 }
-
+@media (min-width: 600px) {
+  button,
+  .linkBtn {
+    padding: 0.8rem 2rem;
+  }
+}
 button:focus,
 button:hover,
 .linkBtn:focus,
@@ -113,7 +127,6 @@ button:focus,
   color: #624de3;
   border-color: rgba(98, 77, 227, 0.3);
   box-shadow: none;
-  min-width: 150px;
 }
 
 .btnSec:focus,
@@ -157,10 +170,6 @@ button:focus,
 
 .ml-auto {
   margin-left: auto;
-}
-
-.scroll {
-  overflow: auto;
 }
 
 .meta {

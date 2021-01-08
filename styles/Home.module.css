@@ -13,29 +13,37 @@
 .addBtn > span {
   flex-shrink: 0;
 }
-
+.tableOvflw {
+  overflow: auto;
+  height: calc(100% - (2.875rem + 2rem)); /*2.875rem padding of main */
+  margin-top: 2rem;
+}
 .table {
-  width: 100%;
   border-collapse: separate;
   border-spacing: 0 1em;
-  table-layout: fixed;
+  /* table-layout: fixed; */
+  margin: 0 auto;
+  width: 100%;
+  padding-right: 1.5rem;
 }
 
 .thead th {
   text-align: left;
   font-weight: 400;
+  padding: 0.75rem;
 }
 .thead th:first-child {
   padding-left: 1.625rem;
 }
 .tbody > tr {
   height: 7rem;
-  box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+  box-shadow: 6px 6px 13.5px rgba(0, 0, 0, 0.05);
 }
 .tbody td {
   background-color: #fff;
   color: #525f7f;
   margin-bottom: 0.625rem;
+  padding: 0.75rem;
 }
 .tbody td:first-child {
   border-top-left-radius: 10px;
