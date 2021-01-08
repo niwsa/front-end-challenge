@@ -11,7 +11,6 @@ export default function Home() {
 
   async function loadEmployees() {
     const records = await retrieveEmplRecords();
-    console.log(records);
     if (records) {
       setEmpls(records);
     }
@@ -32,7 +31,7 @@ export default function Home() {
         ) : null}
         <Link href="/employee">
           <a className={`inl-flex al-ctr no-shrink linkBtn ${styles.addBtn}`}>
-            <UserIcon aria-hidden="true" width="1rem" height="1rem" />
+            <UserIcon aria-hidden="true" width="1em" height="1em" />
             <span>Add employee</span>
           </a>
         </Link>
