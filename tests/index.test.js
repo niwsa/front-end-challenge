@@ -14,7 +14,7 @@ describe("Employee Add/Edit", () => {
   let page;
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: false, //can be changed to false to see the test in action
+      headless: true, //can be changed to false to see the test in action
       defaultViewport: null,
     });
     const pages = await browser.pages();
@@ -87,5 +87,5 @@ describe("Employee Add/Edit", () => {
     await getByText($table, "Rocket Scientist");
   });
 
-  // afterAll(async () => await browser.close());
+  afterAll(async () => await browser.close());
 });

@@ -60,7 +60,7 @@
 .name {
   font-weight: 500;
   font-size: 1.125rem;
-  color: #00234b;
+  color: #00234b !important;
 }
 
 .name div {
