@@ -38,3 +38,20 @@ The app contains two routes one which shows the list of employees and other one 
 ## Database
 
 Uses browser based Indexed DB for persisting data.
+
+## Tests
+
+Automated tests are in the [tests](tests/index.test.js) folder. The tests run in an headless browser by default, but to see it in action change [headless](tests/index.test.js#L11) on line 11 to false.
+
+To execute the tests, first ensure that the development server is up and running, then run
+
+```bash
+npm run test
+#or
+yarn test
+```
+
+## IMPLEMENTATION NOTES
+
+- The employee table is not sorted, the order of rows is determined the key sorting in Indexed DB.
+- On smaller viewports the table will be showing scrollbars.

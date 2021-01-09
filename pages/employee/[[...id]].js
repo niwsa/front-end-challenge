@@ -107,9 +107,7 @@ export default function Employee() {
               <div className="meta">What is their role?</div>
             </div>
             <div className="flex col">
-              <label htmlFor="country" id="country">
-                Country
-              </label>
+              <label htmlFor="country">Country</label>
               <div className="select">
                 <select
                   required
