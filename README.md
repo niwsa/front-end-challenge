@@ -51,7 +51,7 @@ npm run test
 yarn test
 ```
 
-The tests run in an headless browser by default, but to see it in action change [headless](tests/index.test.js#L11) on line 11 to false and comment out ` afterAll(async () => await browser.close());` on last line.
+The tests run in an headless browser by default, but to see it in action change [headless](tests/index.test.js#L17) on line 11 to false and comment out ` afterAll(async () => await browser.close());` on last line.
 
 ## IMPLEMENTATION NOTES
 
