@@ -50,23 +50,25 @@ export default function Home() {
               </tr>
             </thead>
             <tbody className={styles.tbody}>
-              {empls.map(({ id, name, dob, jobTitle, country, salary }) => (
-                <tr key={id}>
-                  <td className={styles.name}>
-                    {name} <div className="meta">{dob}</div>
-                  </td>
-                  <td>{jobTitle}</td>
-                  <td>{country}</td>
-                  <td className={styles.sal}>
-                    {salary} USD <span className="meta">per year</span>
-                  </td>
-                  <td>
-                    <Link href={`/employee/${id}`}>
-                      <a className={`linkBtn btnSec`}>Edit</a>
-                    </Link>
-                  </td>
-                </tr>
-              ))}
+              {empls
+                .sort((a, b) => b.createdAt - a.createdAt)
+                .map(({ id, name, dob, jobTitle, country, salary }) => (
+                  <tr key={id}>
+                    <td className={styles.name}>
+                      {name} <div className="meta">{dob}</div>
+                    </td>
+                    <td>{jobTitle}</td>
+                    <td>{country}</td>
+                    <td className={styles.sal}>
+                      {salary} USD <span className="meta">per year</span>
+                    </td>
+                    <td>
+                      <Link href={`/employee/${id}`}>
+                        <a className={`linkBtn btnSec`}>Edit</a>
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         ) : (

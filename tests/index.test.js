@@ -1,14 +1,20 @@
 import puppeteer from "puppeteer";
 import { getDocument, queries, waitFor } from "pptr-testing-library";
 import empls from "./employeelist.json";
-const { getByLabelText, getByRole, getByText, queryAllByRole } = queries;
+const {
+  getByLabelText,
+  getByRole,
+  getByText,
+  getAllByText,
+  queryAllByRole,
+} = queries;
 
-describe("Employee Add", () => {
+describe("Employee Add/Edit", () => {
   let browser;
   let page;
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: true, //can be changed to false to see the test in action
+      headless: false, //can be changed to false to see the test in action
       defaultViewport: null,
     });
     const pages = await browser.pages();
@@ -48,7 +54,7 @@ describe("Employee Add", () => {
     const $table = await getByRole($document, "table");
     for (let emp of empls) {
       for (const [key, value] of Object.entries(emp)) {
-        await getByText($table, value, {
+        await getAllByText($table, value, {
           exact: key === "Salary" ? false : true,
         });
       }
@@ -81,5 +87,5 @@ describe("Employee Add", () => {
     await getByText($table, "Rocket Scientist");
   });
 
-  afterAll(async () => await browser.close());
+  // afterAll(async () => await browser.close());
 });

@@ -2,7 +2,7 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Development
+## Run App
 
 Install packages
 
@@ -20,13 +20,13 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
 ## User story
 
-When the app first loads an empty state is shown from where employees can be added. Added employees are shown in the main page table.
+When the app first loads an empty state is shown. Employees are added by clicking the `Add employee` link. Added employees show up in the main page table where there is a link for editing. On saving the forms are redirected back to home page.
 
 ## Routes
 
@@ -41,7 +41,7 @@ Uses browser based Indexed DB for persisting data.
 
 ## Tests
 
-Automated tests are in the [tests](tests/index.test.js) folder. The tests run in an headless browser by default, but to see it in action change [headless](tests/index.test.js#L11) on line 11 to false.
+Automated tests are in the [tests](tests/index.test.js) folder.
 
 To execute the tests, first ensure that the development server is up and running, then run
 
@@ -51,7 +51,9 @@ npm run test
 yarn test
 ```
 
+The tests run in an headless browser by default, but to see it in action change [headless](tests/index.test.js#L11) on line 11 to false and comment out ` afterAll(async () => await browser.close());` on last line.
+
 ## IMPLEMENTATION NOTES
 
-- The employee table is not sorted, the order of rows is determined the key sorting in Indexed DB.
+- The employee table is sorted based on creation time, last added appears on top.
 - On smaller viewports the table will be showing scrollbars.
