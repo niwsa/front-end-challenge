@@ -57,7 +57,7 @@ input[type="text"]:focus ~ label {
 select {
   appearance: none;
   background-color: transparent;
-  color: #525f7f;
+  color: #00234b;
   margin: 0;
   width: 100%;
   cursor: pointer;

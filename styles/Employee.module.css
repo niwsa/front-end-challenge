@@ -30,7 +30,7 @@
   margin-top: 1.875rem;
 }
 .form > div:first-child > div:last-child {
-  margin-bottom: 5rem;
+  margin-bottom: 0.8rem; /*for firefox */
 }
 
 .form label {
@@ -39,6 +39,9 @@
   margin-bottom: 4px;
 }
 
+.form > div:first-child > div:focus-within label {
+  color: #624de3;
+}
 .form label ~ div:last-child {
   margin-top: 8px;
   color: rgba(0, 35, 75, 0.5);
